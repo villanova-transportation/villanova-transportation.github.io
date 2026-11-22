@@ -24,3 +24,41 @@
 @media(max-width:720px){.team-grid--graduate{grid-template-columns:repeat(2,minmax(0,1fr))}.team-grid--graduate img,.team-grid--graduate .initials{height:210px}.ug-recognition{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 16px}.ug-recognition li{flex-direction:column;gap:9px}.ug-recognition img,.ug-recognition__initials{flex-basis:auto}.ug-recognition h4{overflow-wrap:anywhere}.lab-ug{margin-top:30px;padding-top:25px}}
 
 .ug-cohort--featured .ug-recognition{grid-template-columns:repeat(2,minmax(0,1fr))}.ug-cohort--featured .ug-recognition li{padding:16px;background:#f7faff;border:1px solid #d8e2eb;border-radius:6px;gap:20px}.ug-cohort--featured .ug-recognition img,.ug-cohort--featured .ug-recognition__initials{width:112px;height:140px;flex:0 0 112px;border-radius:5px}.ug-cohort--featured .ug-recognition h4{font-size:17px}.ug-cohort--featured .ug-recognition p{font-size:13px}.ug-former{border-top:1px solid #d8e2eb;margin-top:12px;padding-top:20px}.ug-former summary{font-size:14px;font-weight:650;cursor:pointer;color:#002664}.ug-former .ug-cohort:first-of-type{border-top:0}@media(max-width:720px){.ug-cohort--featured .ug-recognition li{padding:10px;gap:12px}.ug-cohort--featured .ug-recognition img,.ug-cohort--featured .ug-recognition__initials{width:108px;height:132px;max-width:100%;flex-basis:auto}.ug-cohort--featured .ug-recognition h4{font-size:15px}.ug-cohort--featured .ug-recognition p{font-size:11px}}
+
+/* Local design study: softly revealed motion beneath the introduction. */
+.motion-story{position:relative;isolation:isolate;overflow:hidden;padding-bottom:18px;background:var(--cream)}
+.motion-story .intro{position:relative;z-index:2;padding-bottom:32px}
+.motion-canvas{position:relative;width:100%;height:390px;margin-top:-28px;z-index:0;overflow:hidden;-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 38%,#000 70%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,#000 38%,#000 70%,transparent 100%)}
+.motion-canvas:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--cream) 0%,transparent 19%,transparent 81%,var(--cream) 100%);pointer-events:none}
+.motion-canvas video{width:100%;height:100%;object-fit:cover;object-position:center 48%;display:block;opacity:.9}
+.motion-caption{display:flex;justify-content:space-between;align-items:center;gap:20px;position:relative;margin-top:-20px;font-size:12px;color:var(--muted);letter-spacing:.07em}
+.motion-detail{letter-spacing:0}.motion-caption button{background:transparent;border:1px solid #b4c6d6;color:var(--ink);border-radius:20px;padding:7px 15px;font-size:12px;white-space:nowrap}
+.motion-story+.metrics{padding-top:40px}
+@media(max-width:720px){.motion-canvas{height:270px;margin-top:-5px}.motion-story .intro{padding-bottom:20px}.motion-caption{font-size:10px;gap:12px}.motion-detail{display:block;max-width:220px}.motion-caption button{font-size:11px;padding:6px 11px}}
+
+/* Compact study: motion occupies only the space beneath the left heading. */
+.motion-story{padding-bottom:0;overflow:visible}
+.motion-story .intro{align-items:start;padding-bottom:0;gap:10%}
+.motion-canvas{width:calc(100% + 40px);height:auto;aspect-ratio:16/9;margin:12px -20px 0;-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 24%,#000 75%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,#000 24%,#000 75%,transparent 100%)}
+.motion-canvas:after{background:linear-gradient(90deg,var(--cream),transparent 14%,transparent 86%,var(--cream))}
+.motion-canvas video{object-fit:cover;opacity:.92}
+.motion-caption.wrap{width:100%;font-size:9px;letter-spacing:.04em;margin:0;gap:8px;align-items:center}
+.motion-caption .motion-detail{display:none}
+.motion-caption button{font-size:10px;padding:4px 9px}
+.motion-story+.metrics{padding-top:42px}
+@media(max-width:720px){.motion-canvas{width:100%;margin:12px 0 0;max-width:470px}.motion-caption.wrap{max-width:470px}.motion-story .intro{gap:28px}.motion-story+.metrics{padding-top:35px}}
+
+/* Organic falloff: a single elliptical mask avoids rectangular corner bands. */
+.motion-canvas{overflow:visible;-webkit-mask-image:none;mask-image:none}
+.motion-canvas:after{display:none}
+.motion-canvas video{-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 28%,rgba(0,0,0,.96) 42%,rgba(0,0,0,.76) 56%,rgba(0,0,0,.42) 70%,rgba(0,0,0,.12) 84%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 28%,rgba(0,0,0,.96) 42%,rgba(0,0,0,.76) 56%,rgba(0,0,0,.42) 70%,rgba(0,0,0,.12) 84%,transparent 100%);opacity:.9}
+
+/* Broad, continuous falloff with a larger atmospheric footprint. */
+.motion-story .intro>div:first-child{position:relative;isolation:isolate}
+.motion-story .intro h2,.motion-story .intro .eyebrow{position:relative;z-index:2}
+.motion-story .intro-copy{position:relative;z-index:3}
+.motion-canvas{width:calc(100% + 220px);height:380px;aspect-ratio:auto;margin:-48px -110px -80px;pointer-events:none;z-index:-1}
+.motion-canvas video{object-fit:cover;opacity:.77;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,rgba(0,0,0,.95) 0%,rgba(0,0,0,.86) 15%,rgba(0,0,0,.66) 30%,rgba(0,0,0,.43) 45%,rgba(0,0,0,.23) 60%,rgba(0,0,0,.095) 75%,rgba(0,0,0,.025) 88%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,rgba(0,0,0,.95) 0%,rgba(0,0,0,.86) 15%,rgba(0,0,0,.66) 30%,rgba(0,0,0,.43) 45%,rgba(0,0,0,.23) 60%,rgba(0,0,0,.095) 75%,rgba(0,0,0,.025) 88%,transparent 100%)}
+.motion-caption.wrap{position:relative;z-index:3;margin-top:0}
+.motion-story+.metrics{position:relative;z-index:3}
+@media(max-width:720px){.motion-canvas{width:calc(100% + 50px);height:300px;margin:-25px -25px -50px;max-width:none}.motion-story{overflow:hidden}.motion-story .intro{gap:28px}}
